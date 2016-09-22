@@ -6,6 +6,6 @@
 int main(int argc, char* argv[]) {
 	chdir("~/Documents");
 	mkdir("NewDirectory", 0700);
-	ls("NewDirectory");
+	system("ls");
 	return 0;
 }
