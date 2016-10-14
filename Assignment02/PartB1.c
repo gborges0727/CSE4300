@@ -6,6 +6,9 @@
 
 int last_threadID = 1;
 int threadRunCounts[NUM_THREADS] = {0};
+int queueSize = 15;
+int producerSleep = 0;
+int consumerSleep = 0;
 
 pthread_mutex_t myTurnMutex;
 pthread_cond_t myTurnSignal;
@@ -13,7 +16,7 @@ pthread_cond_t myTurnSignal;
 int checkArray(int arrayToCheck[]) {
 	for (int i = 0; i < NUM_THREADS; i++){
 		int x = threadRunCounts[i];
-		printf("threadRunCounts[%d] is %d\n", 1, x);
+		printf("Thread number %d has been run %d times\n", i, x);
 		if(threadRunCounts[i] >= 10)
 			return false;
 	}
