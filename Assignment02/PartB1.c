@@ -6,9 +6,6 @@
 
 int last_threadID = 1;
 int threadRunCounts[NUM_THREADS] = {0};
-int queueSize = 15;
-int producerSleep = 0;
-int consumerSleep = 0;
 
 pthread_mutex_t myTurnMutex;
 pthread_cond_t myTurnSignal;
